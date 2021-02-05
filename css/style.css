@@ -63,26 +63,39 @@ main {
   display: grid;
   grid-area: main;
   background-color: white;
+  z-index: -1;
 }
 .main-header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 10px;
+  padding: 11px 10px;
   color: grey;
+  margin-bottom: 20px;
 }
 .main-header-search {
-  background-color: rgb(222, 222, 222);
+  display: flex;
+  width: 70%;
+  height: 60px;
+  position: absolute;
+  top: -3px;
+  right: 0;
+  background-color: rgb(237, 237, 237);
+  border-color: rgb(237, 237, 237);
   border-style: none none solid solid;
   border-radius: 4px;
-  border-color: rgb(222, 222, 222);
-  flex: 1;
 }
+.porcoidd {
+  align-self: center;
+  margin-left: auto;
+}
+
 .main-header-search input {
   border: 1px solid rgb(255, 255, 255);
-  border-style: solid solid none none;
+  margin-right: 10px;
   border-radius: 4px;
-  height: 50px;
+  height: 40px;
 }
 
 .traffic {
