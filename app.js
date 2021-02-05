@@ -33,6 +33,13 @@ var chart = new Chart(ctx, {
 
   // Configuration options go here
   options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    elements: {
+      line: {
+        tension: 0,
+      },
+    },
     legend: {
       display: false,
     },
@@ -88,6 +95,8 @@ var chart = new Chart(ctx, {
 
   // Configuration options go here
   options: {
+    responsive: true,
+    maintainAspectRatio: false,
     legend: {
       display: false,
     },
