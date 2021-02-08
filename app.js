@@ -10,7 +10,7 @@ alertBanner.innerHTML = `
 alertBanner.addEventListener("click", (e) => {
   const element = e.target;
   if (element.classList.contains("alert-banner-close")) {
-    alert.style.display = "none";
+    alertBanner.style.display = "none";
   }
   console.log("clara");
 });
@@ -19,105 +19,122 @@ alertBanner.addEventListener("click", (e) => {
 
 //TRAFFIC
 
-var ctx = document.getElementById("traffic-chart").getContext("2d");
-var chart = new Chart(ctx, {
-  // The type of chart we want to create
-  type: "line",
+var trafficCanvas = document.getElementById("traffic-chart");
+var trafficData = {
+  labels: [
+    "16-22",
+    "23-29",
+    "30-5",
+    "6-12",
+    "13-19",
+    "20-26",
+    "27-3",
+    "4-10",
+    "11-17",
+    "18-24",
+    "25-31",
+  ],
+  datasets: [
+    {
+      data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+      backgroundColor: "rgba(116, 119, 191, .3)",
+      borderWidth: 1,
+    },
+  ],
+};
 
-  // The data for our dataset
-  data: {
-    labels: [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ],
-    datasets: [
+var trafficOptions = {
+  aspectRatio: 2.5,
+  animation: {
+    duration: 0,
+  },
+  elements: {
+    line: {
+      tension: 0,
+    },
+  },
+  scales: {
+    yAxes: [
       {
-        label: "My First dataset",
-        backgroundColor: "rgb(255, 99, 132)",
-        borderColor: "rgb(255, 99, 132)",
-        data: [500, 100, 1500, 2000, 2500, 1500, 700, 500, 800, 1000, 900, 500],
+        ticks: {
+          beginAtZero: true,
+        },
       },
     ],
   },
-
-  // Configuration options go here
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    elements: {
-      line: {
-        tension: 0,
-      },
-    },
-    legend: {
-      display: false,
-    },
+  legend: {
+    display: false,
   },
+};
+
+var trafficChart = new Chart(trafficCanvas, {
+  type: "line",
+  data: trafficData,
+  options: trafficOptions,
 });
 
 //DAILY
 
-var ctx = document.getElementById("daily-chart").getContext("2d");
-var chart = new Chart(ctx, {
-  // The type of chart we want to create
-  type: "bar",
+var dailyCanvas = document.getElementById("daily-chart");
+var dailyData = {
+  labels: ["S", "M", "T", "W", "T", "F", "S"],
+  datasets: [
+    {
+      label: "# of Hits",
+      data: [75, 115, 175, 125, 225, 200, 100],
+      backgroundColor: "#7477BF",
+      borderWidth: 1,
+    },
+  ],
+};
 
-  // The data for our dataset
-  data: {
-    labels: ["S", "M", "T", "W", "T", "F", "S"],
-    datasets: [
+var dailyOptions = {
+  scales: {
+    yAxes: [
       {
-        label: "My First dataset",
-        backgroundColor: "rgb(255, 99, 132)",
-        borderColor: "rgb(255, 99, 132)",
-        data: [50, 150, 100, 200, 250, 200, 50],
+        ticks: {
+          beginAtZero: true,
+        },
       },
     ],
   },
-
-  // Configuration options go here
-  options: {
-    legend: {
-      display: false,
-    },
+  legend: {
+    display: false,
   },
+};
+
+var dailyChart = new Chart(dailyCanvas, {
+  type: "bar",
+  data: dailyData,
+  options: dailyOptions,
 });
 
 //MOBILE
-var ctx = document.getElementById("mobile-chart").getContext("2d");
-var chart = new Chart(ctx, {
-  // The type of chart we want to create
-  type: "doughnut",
+var mobileCanvas = document.getElementById("mobile-chart");
+var mobileData = {
+  labels: ["Desktop", "Tablet", "Phone"],
+  datasets: [
+    {
+      label: "# of Users",
+      data: [2000, 500, 500],
+      borderWidth: 0,
+      backgroundColor: ["#7477bf", "#78CF82", "#51b6cb"],
+    },
+  ],
+};
 
-  // The data for our dataset
-  data: {
-    labels: ["Phone", "Tablet", "Desktop"],
-    datasets: [
-      {
-        label: "My First dataset",
-        backgroundColor: "rgb(255, 99, 132)",
-        borderColor: "rgb(255, 99, 132)",
-        data: [60, 10, 30],
-      },
-    ],
-  },
-
-  // Configuration options go here
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    legend: {
-      display: false,
+var mobileOptions = {
+  legend: {
+    position: "right",
+    labels: {
+      boxWidth: 20,
+      fontStyle: "bold",
     },
   },
+};
+
+var mobileChart = new Chart(mobileCanvas, {
+  type: "doughnut",
+  data: mobileData,
+  options: mobileOptions,
 });
