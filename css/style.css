@@ -152,7 +152,8 @@ main {
 .traffic,
 .daily,
 .mobile,
-.members {
+.members,
+.activity {
   border-bottom: 2px solid rgb(237, 237, 237);
   padding: 10px 10px 10px 10px;
 }
@@ -228,12 +229,18 @@ li.active {
   color: grey;
 }
 
-.members-container {
+.members-container,
+.activity-container {
   display: flex;
   align-items: center;
+
   margin-bottom: 20px;
   border-bottom: 1px solid rgb(237, 237, 237);
   padding-bottom: 10px;
+}
+.members h3,
+.activity h3 {
+  margin-bottom: 10px;
 }
 
 .profile-image {
@@ -242,7 +249,8 @@ li.active {
   border-radius: 50%;
   margin-right: 20px;
 }
-.date {
+.date,
+.fas {
   margin-left: auto;
   margin-bottom: auto;
 }
