@@ -138,3 +138,22 @@ var mobileChart = new Chart(mobileCanvas, {
   data: mobileData,
   options: mobileOptions,
 });
+
+// MESSAGE FORM
+
+const user = document.getElementById("userField");
+const message = document.getElementById("messageField");
+const send = document.getElementById("send");
+
+send.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (user == "" && message == "") {
+    alert("Please fill out user and message fields before sending");
+  } else if (user == "") {
+    alert("Please fill out user field before sending");
+  } else if (message == "") {
+    alert("Please fill out message field before sending");
+  } else {
+    alert(`Message successfully sent to: ${user.value}`);
+  }
+});
