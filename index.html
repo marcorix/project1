@@ -293,25 +293,21 @@
       <section class="settings">
         <h3>Settings</h3>
 
-        <label class="switch-light switch-candy" onclick="">
-          <input type="checkbox" />
-          <strong> Send Email Notifications </strong>
-          <span>
-            <span>Off</span>
-            <span>On</span>
-            <a></a>
-          </span>
-        </label>
+        <div class="toggle-switch">
+          <p><strong> Send Email Notifications </strong></p>
+          <label class="switch">
+            <input type="checkbox" id="checkboxEmail" />
+            <span class="slider round"></span>
+          </label>
+        </div>
 
-        <label class="switch-light switch-candy" onclick="">
-          <input type="checkbox" />
-          <strong> Set Profile to public </strong>
-          <span>
-            <span>Off</span>
-            <span>On</span>
-            <a></a>
-          </span>
-        </label>
+        <div class="toggle-switch">
+          <p><strong> Set Profile to Public</strong></p>
+          <label class="switch">
+            <input type="checkbox" id="checkboxprofile" />
+            <span class="slider round"></span>
+          </label>
+        </div>
 
         <select class="form-field" id="timezone">
           <option disabled selected>Select a Timezone</option>
