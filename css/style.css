@@ -48,16 +48,6 @@ header h3 {
   padding-left: 10px;
 }
 
-header {
-  grid-area: header;
-  background-color: #888ccc;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  color: white;
-}
-
 input[type="text"],
 textarea,
 select {
@@ -71,8 +61,35 @@ select {
   color: grey;
 }
 
+header {
+  grid-area: header;
+  background-color: #888ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  color: white;
+}
+
 .logo {
   flex: 1;
+}
+header i {
+}
+.notifications {
+  display: flex;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: #78cf82;
+}
+
+.notifications:hover {
+  transform: scale(1.2);
 }
 
 header img {
@@ -93,11 +110,15 @@ header img {
   justify-content: space-around;
   grid-area: sidebar;
   background-color: #585c9a;
-  padding: 20px;
+  padding: 15px;
 }
 
 .navigation img {
   width: 30px;
+  opacity: 0.5;
+}
+img.active-nav {
+  opacity: 1;
 }
 
 main {
@@ -225,7 +246,6 @@ li.active {
 }
 .social-icons {
   transform-origin: 50% 50%;
-  transform-box: fill;
 }
 
 .social-image {
@@ -337,7 +357,7 @@ li.active {
   right: 0;
   bottom: 0;
   background-color: lightgrey;
-  -webkit-transition: 0.4s;
+
   transition: 0.4s;
 }
 .slider::before {
@@ -348,7 +368,7 @@ li.active {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: 0.4s;
+
   transition: 0.4s;
 }
 input:checked + .slider {
@@ -358,8 +378,6 @@ input:focus + .slider {
   box-shadow: 0 0 1px #7477bf;
 }
 input:checked + .slider:before {
-  -webkit-transform: translateX(28px);
-  -ms-transform: translateX(28px);
   transform: translateX(28px);
 }
 /* Rounded sliders */
@@ -391,28 +409,26 @@ input:checked + .slider:before {
   .main-header,
   .traffic,
   #alert,
-  .socials {
+  .socials,
+  .daily,
+  .mobile {
     grid-column: 1 / span 2;
   }
 
-  .daily,
   .members,
   .message {
     grid-column: 1 / span 1;
+    border-right: 2px solid rgb(237, 237, 237);
   }
 
-  .mobile,
   .activity,
   .settings {
     grid-column: 2 / span 1;
   }
 
-  .widget-container-full {
-    width: 88vw;
-  }
-
+  .widget-container-full,
   .widget-container-half {
-    width: 40vw;
+    width: 88vw;
   }
 
   /* Navigation */
@@ -456,5 +472,18 @@ input:checked + .slider:before {
   .social-wrapper {
     flex-direction: row;
     justify-content: space-around;
+  }
+}
+
+@media (min-width: 1024px) {
+  .daily {
+    grid-column: 1 / span 1;
+  }
+
+  .mobile {
+    grid-column: 2 / span 1;
+  }
+  .widget-container-half {
+    width: 40vw;
   }
 }
