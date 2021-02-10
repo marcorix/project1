@@ -61,6 +61,8 @@ select {
   color: grey;
 }
 
+/* HEADER  */
+
 header {
   grid-area: header;
   background-color: #888ccc;
@@ -74,8 +76,7 @@ header {
 .logo {
   flex: 1;
 }
-header i {
-}
+
 .notifications {
   display: flex;
   transition: 0.3s;
@@ -104,6 +105,8 @@ header img {
   margin-left: 10px;
 }
 
+/* NAVIGATION  */
+
 .navigation {
   display: flex;
   align-items: center;
@@ -120,6 +123,8 @@ header img {
 img.active-nav {
   opacity: 1;
 }
+
+/* MAIN */
 
 main {
   display: grid;
@@ -191,6 +196,8 @@ main {
   padding: 10px 10px 10px 10px;
 }
 
+/* TRAFFIC */
+
 .traffic-header {
   display: flex;
   align-items: center;
@@ -215,6 +222,8 @@ li.active {
   color: white;
   padding: 0 2px;
 }
+
+/* SOCIALS  */
 
 .socials {
   border-bottom: 2px solid rgb(237, 237, 237);
@@ -261,6 +270,8 @@ li.active {
   color: grey;
 }
 
+/* MEMBERS */
+
 .members-container,
 .activity-container {
   display: flex;
@@ -293,6 +304,8 @@ li.active {
   color: lightgrey;
 }
 
+/* MESSAGE  */
+
 .message,
 .settings {
   display: flex;
@@ -324,6 +337,8 @@ li.active {
 #send {
   width: 100%;
 }
+
+/* SETTINGS */
 
 .toggle-switch {
   display: flex;
