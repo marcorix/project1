@@ -214,13 +214,13 @@ main {
   margin-right: 8px;
   color: grey;
   font-size: 0.8em;
+  cursor: pointer;
 }
 
 li.active {
   background-color: #78cf82;
   border-radius: 30px;
   color: white;
-  padding: 0 2px;
 }
 
 /* SOCIALS  */
@@ -474,7 +474,7 @@ input:checked + .slider:before {
   /* Traffic */
   .traffic-nav li {
     display: inline-block;
-    margin-right: 8px;
+    margin-right: 10px;
 
     font-size: 1em;
   }
