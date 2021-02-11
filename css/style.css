@@ -34,6 +34,9 @@ h3 {
   text-transform: uppercase;
   font-weight: 400;
 }
+button {
+  cursor: pointer;
+}
 
 h1 span {
   font-weight: 300;

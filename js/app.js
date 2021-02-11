@@ -1,4 +1,14 @@
 const alertBanner = document.getElementById("alert");
+const checkboxEmail = document.getElementById("checkboxEmail");
+const checkboxProfile = document.getElementById("checkboxprofile");
+const saveButton = document.querySelector(
+  ".settings-buttons button:first-child"
+);
+const cancelButton = document.querySelector(
+  ".settings-buttons button:last-child"
+);
+
+// Alert banner
 
 alertBanner.innerHTML = `
 <div class="alert-banner">
@@ -12,6 +22,34 @@ alertBanner.addEventListener("click", (e) => {
   if (element.classList.contains("alert-banner-close")) {
     alertBanner.style.display = "none";
   }
+});
+
+// Settings local storage
+function loadSettings() {
+  if (localStorage.emailChecked === "true") {
+    checkboxEmail.checked = true;
+  } else if (localStorage.emailChecked === "false") {
+    checkboxEmail.checked = false;
+  }
+  if (localStorage.profileChecked === "true") {
+    checkboxProfile.checked = true;
+  } else if (localStorage.profileChecked === "false") {
+    checkboxProfile.checked = false;
+  }
+}
+// on page loading
+loadSettings();
+
+saveButton.addEventListener("click", () => {
+  localStorage.setItem("emailChecked", checkboxEmail.checked);
+  localStorage.setItem("profileChecked", checkboxprofile.checked);
+});
+
+cancelButton.addEventListener("click", () => {
+  localStorage.removeItem("emailChecked");
+  localStorage.removeItem("profileChecked");
+  checkboxEmail.checked = false;
+  checkboxProfile.checked = false;
 });
 
 // MESSAGE FORM
